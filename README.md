@@ -11,8 +11,8 @@ Don't forget that you must also fill out an evaluation form in Moodle to conside
 
 ## Grading
 
-(STUDENT NUMBER HERE) (STUDENT NAME HERE) (STUDENT EMAIL HERE)
-(STUDENT NUMBER HERE) (STUDENT NAME HERE) (STUDENT EMAIL HERE)
+(841-23-3127) (Edwin J. Perez Rodriguez) (edwin.perez45@upr.edu)
+(802-24-5174) (Jahir E. Padilla Pacheco) (jahir.padilla@upr.edu)
 
 Any project that doesn't compile will receive a 0.
 
