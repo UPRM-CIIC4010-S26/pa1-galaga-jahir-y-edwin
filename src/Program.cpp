@@ -70,6 +70,9 @@ void Program::Update() {
 
 void Program::Draw() {
     background.Draw();
+
+    DrawText(TextFormat("Score: %i", score), GetScreenWidth() - 220, 100, 25, WHITE);
+
     if (pauseFrames <= 0 && !gameOver) player->draw();
     for (Animation& a : Animation::animations) a.draw();
 
