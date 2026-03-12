@@ -83,6 +83,8 @@ void Program::Draw() {
 
     DrawText(TextFormat("Score: %i", score), GetScreenWidth() - 220, 100, 25, WHITE);
 
+     DrawText(TextFormat("RespawnCooldown: %i", respawnCooldown), GetScreenWidth() - 940, 100, 25, WHITE);
+
     if (pauseFrames <= 0 && !gameOver) player->draw();
     for (Animation& a : Animation::animations) a.draw();
 
@@ -105,8 +107,17 @@ void Program::ManageEnemyRespawns() {
     delay = std::max(delay - 1, 0);
 
     respawnCooldown -= 1;
-    if (respawnCooldown <= 0) {
-        respawnCooldown = 1080;
+     if (score >= nextLifeScore){
+            respawnDecrease += 100;
+            nextLifeScore += 1000;
+        }
+    if (respawnDecrease > 900){
+        respawnDecrease = 900;
+    }
+
+     if (respawnCooldown <= 0) {
+        respawnCooldown = 1080 - respawnDecrease;
+       
         for (std::pair<std::pair<float, float>, Enemy*>& p : Enemy::enemies) {
             if (!p.second && p.first.second != 150) {
                 int eType = GetRandomValue(1, 3);
@@ -126,7 +137,8 @@ void Program::ManageEnemyRespawns() {
                 break;
             }
         }
-    }
+     }
+    
 
     if(respawns >= 4) {
         count = 4;
