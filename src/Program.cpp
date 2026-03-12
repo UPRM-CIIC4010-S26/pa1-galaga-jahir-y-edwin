@@ -71,6 +71,10 @@ void Program::Update() {
             nextLifeScore += 1000;
         }
 
+        if(lives > 5){
+        lives = lives - 1;
+        }
+
     }
 }
 
