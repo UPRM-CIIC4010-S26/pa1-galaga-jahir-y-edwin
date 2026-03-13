@@ -14,6 +14,8 @@ class DyEnemy : public Enemy {
             scoreE = 50;
         }
 
+        int text = GetRandomValue(0,1);
+
         void draw() override;
         void update(std::pair<float, float> pos, HitBox target) override;
         void attack(HitBox target) override;
