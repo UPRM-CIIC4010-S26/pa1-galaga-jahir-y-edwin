@@ -107,9 +107,9 @@ void Program::ManageEnemyRespawns() {
     delay = std::max(delay - 1, 0);
 
     respawnCooldown -= 1;
-     if (score >= nextLifeScore){
+     if (score >= nextReScore){
             respawnDecrease += 100;
-            nextLifeScore += 1000;
+            nextReScore += 1000;
         }
     if (respawnDecrease > 900){
         respawnDecrease = 900;
